@@ -5,6 +5,7 @@ import AutoImport from 'unplugin-auto-import/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import Icons from 'unplugin-icons/vite';
 import Components from 'unplugin-vue-components/vite';
+import { VantResolver } from '@vant/auto-import-resolver';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -16,6 +17,7 @@ export default defineConfig({
     }),
     Components({
       resolvers: [
+        VantResolver(),
         IconsResolver({
           // to avoid naming conflicts
           // a prefix can be specified for icons
@@ -34,6 +36,7 @@ export default defineConfig({
       ],
       // global imports to register 全局注册导入
       imports: ['vue', 'vue-router', 'pinia'],
+      resolvers:[VantResolver()]
     }),
   ],
 });

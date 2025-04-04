@@ -11,5 +11,8 @@ declare module 'vue' {
     IconFaBeer: typeof import('~icons/fa/beer')['default']
     'IconMaterialSymbolsLight:10kOutlineSharp': typeof import('~icons/material-symbols-light/10k-outline-sharp')['default']
     IFaBeer: typeof import('~icons/fa/beer')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
+    VanButton: typeof import('vant/es')['Button']
   }
 }
