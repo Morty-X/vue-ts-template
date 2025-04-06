@@ -6,6 +6,7 @@ import IconsResolver from 'unplugin-icons/resolver';
 import Icons from 'unplugin-icons/vite';
 import Components from 'unplugin-vue-components/vite';
 import { VantResolver } from '@vant/auto-import-resolver';
+import { lazyImport, VxeResolver } from 'vite-plugin-lazy-import';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -36,7 +37,17 @@ export default defineConfig({
       ],
       // global imports to register 全局注册导入
       imports: ['vue', 'vue-router', 'pinia'],
-      resolvers:[VantResolver()]
+      resolvers: [VantResolver()],
+    }),
+    lazyImport({
+      resolvers: [
+        VxeResolver({
+          libraryName: 'vxe-table',
+        }),
+        VxeResolver({
+          libraryName: 'vxe-pc-ui',
+        }),
+      ],
     }),
   ],
 });
