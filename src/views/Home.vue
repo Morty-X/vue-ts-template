@@ -10,6 +10,7 @@ import { ref, reactive } from 'vue';
 
 const gridRef = ref();
 console.log(111);
+console.log(222);
 
 const gridOptions = reactive({
   showFooter: true,
